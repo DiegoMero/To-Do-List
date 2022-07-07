@@ -1,0 +1,40 @@
+.to-do-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.to-do-container h2 {
+  border: 2px solid whitesmoke;
+  margin: 0;
+  padding: 1.5%;
+}
+
+#task {
+  border: 2px solid whitesmoke;
+  padding: 1.5%;
+  font-style: italic;
+}
+
+.to-do-container ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.mini-list-container {
+  display: flex;
+  padding: 1.5%;
+  font-size: 25px;
+  border: 2px solid whitesmoke;
+  column-gap: 20px;
+}
+
+button {
+  padding: 1.5%;
+  border-style: none;
+  color: gray;
+}
