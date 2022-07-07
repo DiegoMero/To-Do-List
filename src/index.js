@@ -1,4 +1,7 @@
 import './style.css';
+import reload from './images/reload.png';
+import enter from './images/enter.png';
+import threedots from './images/threedots.png';
 
 const tasks = [
   {
@@ -30,7 +33,24 @@ const addTask = () => {
     const taskDescription = document.createElement('div');
     taskDescription.innerHTML = tasks[i].description;
     miniListContainer.appendChild(taskDescription);
+
+    const myThreeDots = new Image();
+    myThreeDots.src = threedots;
+    myThreeDots.className = 'three-dots-icon';
+    miniListContainer.appendChild(myThreeDots);
   }
 };
 
 addTask();
+
+const reloadIcon = document.querySelector('.reloadIcon');
+const myReload = new Image();
+myReload.className = 'reload-icon';
+myReload.src = reload;
+reloadIcon.appendChild(myReload);
+
+const enterIcon = document.querySelector('.enterIcon');
+const myEnter = new Image();
+myEnter.className = 'enter-icon';
+myEnter.src = enter;
+enterIcon.appendChild(myEnter);
