@@ -1,36 +1,44 @@
 import './style.css';
+import reload from './images/reload.png';
+import enter from './images/enter.png';
+import Tasks from './modules/tasks.js';
+import addTask from './modules/addTask.js';
+// import editTask from './modules/editTask.js';
+import saveTaskStorage from './modules/saveTask.js';
+import displayList from './modules/display.js';
+// import deleteTask from './modules/deleteTask.js';
 
-const tasks = [
-  {
-    description: 'take the dog for a walk',
-    completed: true,
-    index: 0,
-  },
-  {
-    description: 'make the dinner',
-    completed: false,
-    index: 1,
-  },
-];
+const reloadIcon = document.querySelector('.reloadIcon');
+const myReload = new Image();
+myReload.className = 'reload-icon';
+myReload.src = reload;
+reloadIcon.appendChild(myReload);
 
-const listContainer = document.querySelector('ul');
+const enterIcon = document.querySelector('.enterIcon');
+const myEnter = new Image();
+myEnter.className = 'enter-icon';
+myEnter.src = enter;
+enterIcon.appendChild(myEnter);
 
-const addTask = () => {
-  for (let i = 0; i < tasks.length; i += 1) {
-    const miniListContainer = document.createElement('li');
-    miniListContainer.className = 'mini-list-container';
-    listContainer.appendChild(miniListContainer);
+const description = document.querySelector('#task');
+const enterButton = document.querySelector('.enterIcon');
 
-    const taskCheck = document.createElement('input');
-    taskCheck.className = 'task-checkbox';
-    taskCheck.type = 'checkbox';
-    taskCheck.checked = tasks[i].completed;
-    miniListContainer.appendChild(taskCheck);
+displayList();
 
-    const taskDescription = document.createElement('div');
-    taskDescription.innerHTML = tasks[i].description;
-    miniListContainer.appendChild(taskDescription);
+description.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    const tasks = new Tasks(description.value);
+    saveTaskStorage(tasks);
+    addTask(tasks);
+    description.value = '';
   }
-};
+});
 
-addTask();
+enterButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const tasks = new Tasks(description.value);
+  saveTaskStorage(tasks);
+  addTask(tasks);
+  description.value = '';
+});

@@ -8,15 +8,15 @@
 }
 
 .to-do-container h2 {
-  border: 2px solid whitesmoke;
   margin: 0;
   padding: 1.5%;
 }
 
 #task {
-  border: 2px solid whitesmoke;
+  border: none;
   padding: 1.5%;
   font-style: italic;
+  flex: auto;
 }
 
 .to-do-container ul {
@@ -25,16 +25,67 @@
   margin: 0;
 }
 
+.title-container {
+  border: 2px solid whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-container {
+  border: 2px solid whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reload-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.enter-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.three-dots-icon {
+  content: url(./images/threedots.png);
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+}
+
 .mini-list-container {
   display: flex;
+  align-items: center;
   padding: 1.5%;
   font-size: 25px;
   border: 2px solid whitesmoke;
   column-gap: 20px;
 }
 
+.task-description {
+  border-style: none;
+  background-color: white;
+  width: auto;
+}
+
 button {
   padding: 1.5%;
   border-style: none;
   color: gray;
+}
+
+.input-editable {
+  border: none;
+  outline: none;
+  border-color: white;
+}
+
+.trashcan {
+  content: url(./images/delete.png);
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
 }
