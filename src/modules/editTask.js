@@ -9,7 +9,7 @@ export function editTask(e) {
 export function editInput() {
   const tasksArray = getTasks();
   this.disabled = true;
-  const index = parseInt(this.id, 10);
+  const index = parseInt(this.id, 36);
   tasksArray[index].description = this.value;
   saveTaskStorage(tasksArray, true);
   this.parentNode.querySelector('.testDot').classList.add('three-dots-icon');
