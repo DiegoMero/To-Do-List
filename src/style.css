@@ -50,7 +50,7 @@
 }
 
 .three-dots-icon {
-  content: url(./modules/threedots.png);
+  content: url(./images/threedots.png);
   width: 15px;
   height: 15px;
   margin-left: auto;
@@ -68,6 +68,7 @@
 .task-description {
   border-style: none;
   background-color: white;
+  width: auto;
 }
 
 button {
@@ -83,7 +84,7 @@ button {
 }
 
 .trashcan {
-  content: url(./modules/delete.png);
+  content: url(./images/delete.png);
   width: 15px;
   height: 15px;
   margin-left: auto;
