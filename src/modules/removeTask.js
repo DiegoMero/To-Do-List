@@ -3,7 +3,8 @@ import saveTaskStorage from './saveTask.js';
 
 export default function removeTaskStorage(tasksIndex) {
   let tasksArray = getTasks();
-  tasksIndex = parseInt(tasksIndex, 36);
+  tasksIndex = parseInt(tasksIndex, 10);
   tasksArray = tasksArray.filter((tasks) => tasks.index !== tasksIndex);
-  saveTaskStorage(tasksArray, true);
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
+  // saveTaskStorage(tasksArray, true);
 }
