@@ -89,3 +89,7 @@ button {
   height: 15px;
   margin-left: auto;
 }
+
+.task-checkbox:checked + .task-description {
+  text-decoration: line-through;
+}

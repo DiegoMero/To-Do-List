@@ -6,4 +6,5 @@ export default function removeTaskStorage(tasksIndex) {
   tasksIndex = parseInt(tasksIndex, 10);
   tasksArray = tasksArray.filter((tasks) => tasks.index !== tasksIndex);
   saveTaskStorage(tasksArray, true);
+  window.location.reload();
 }

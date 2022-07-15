@@ -8,7 +8,7 @@ export default function saveTaskStorage(tasks, edit = false) {
     tasksArray = tasks;
   }
   for (let i = 0; i < tasksArray.length; i += 1) {
-    tasksArray[i].index = i;
+    tasksArray[i].index = i + 1;
   }
   localStorage.setItem('tasks', JSON.stringify(tasksArray));
 }

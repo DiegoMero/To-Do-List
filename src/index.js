@@ -3,10 +3,11 @@ import reload from './images/reload.png';
 import enter from './images/enter.png';
 import Tasks from './modules/tasks.js';
 import addTask from './modules/addTask.js';
-// import editTask from './modules/editTask.js';
 import saveTaskStorage from './modules/saveTask.js';
 import displayList from './modules/display.js';
-// import deleteTask from './modules/deleteTask.js';
+import clearAllSelected from './modules/clearAllSelected.js';
+
+displayList();
 
 const reloadIcon = document.querySelector('.reloadIcon');
 const myReload = new Image();
@@ -22,8 +23,7 @@ enterIcon.appendChild(myEnter);
 
 const description = document.querySelector('#task');
 const enterButton = document.querySelector('.enterIcon');
-
-displayList();
+const clearButton = document.getElementById('clear-btn');
 
 description.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
@@ -41,4 +41,9 @@ enterButton.addEventListener('click', (event) => {
   saveTaskStorage(tasks);
   addTask(tasks);
   description.value = '';
+});
+
+clearButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  clearAllSelected();
 });
