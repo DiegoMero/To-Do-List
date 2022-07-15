@@ -42,7 +42,7 @@ export default function addTask(tasks) {
       myThreeDots.classList.remove('three-dots-icon');
     } else {
       deleteTask(tasks);
-      removeTaskStorage(e.target.id);
+      removeTaskStorage(e.target.id, tasks);
     }
   });
 }
