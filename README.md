@@ -13,7 +13,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://diegomero.github.io/To-Do-List/)
+[Live Demo Link](https://diegomero.github.io/To-Do-List/dist/)
 
 
 ## Getting Started
